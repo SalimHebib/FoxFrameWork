@@ -82,7 +82,7 @@
 
         <resources>
             <resource>
-                <directory>src\test\resources\log4j2.xml</directory>
+                <directory>src\test\resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
