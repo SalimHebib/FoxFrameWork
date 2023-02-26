@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke Testing" thread-count="4">
+    <listeners>
+        <listener class-name="Listeners.Listeners"/>
+    </listeners>
+
+    <test name="TestFour">
+        <classes>
+            <class name="testes.FourTest"/>
+        </classes>
+    </test>
+
+    <test name="TestThree">
+        <classes>
+            <class name="testes.ThreeTest"/>
+        </classes>
+    </test>
+
+    <test name="TestTwo">
+        <classes>
+            <class name="testes.TwoTest"/>
+        </classes>
+    </test>
+
+    <test name="LoginTest">
+        <classes>
+            <class name="testes.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Cucumber">
+        <classes>
+            <class name="runner.TestRunner"/>
+        </classes>
+    </test>
+
+
+</suite>
