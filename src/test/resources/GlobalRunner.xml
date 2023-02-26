@@ -5,27 +5,12 @@
         <listener class-name="Listeners.Listeners"/>
     </listeners>
 
-    <test name="TestFour">
+    <test name="Hybrid">
         <classes>
             <class name="testes.FourTest"/>
-        </classes>
-    </test>
-
-    <test name="TestThree">
-        <classes>
-            <class name="testes.ThreeTest"/>
-        </classes>
-    </test>
-
-    <test name="TestTwo">
-        <classes>
-            <class name="testes.TwoTest"/>
-        </classes>
-    </test>
-
-    <test name="LoginTest">
-        <classes>
             <class name="testes.LoginTest"/>
+            <class name="testes.ThreeTest"/>
+            <class name="testes.TwoTest"/>
         </classes>
     </test>
 

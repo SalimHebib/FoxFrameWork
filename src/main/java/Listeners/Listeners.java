@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class Listeners extends CommonApi implements ITestListener {
 
+    WebDriver driver = null;
     ExtentReports extentReport = ExtentReporter.getExtentReport();
     ExtentTest extentTest;
     ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<>();
@@ -32,14 +33,14 @@ public class Listeners extends CommonApi implements ITestListener {
     public void onTestSuccess(ITestResult result) {
 
         String testName = result.getName();
-       // extentTest.log(Status.PASS, testName + "Test Passed");
+        // extentTest.log(Status.PASS, testName + "Test Passed");
         extentTestThread.get().log(Status.PASS, testName + "Test Passed");
 
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        WebDriver driver = null;
+
         String testMethodName = result.getName();
         try {
             driver = (WebDriver) result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
@@ -47,7 +48,7 @@ public class Listeners extends CommonApi implements ITestListener {
             e.printStackTrace();
         }
         try {
-            String screenshotFilePath = takeScreenshot(testMethodName,driver);
+            String screenshotFilePath = takeScreenshot(testMethodName, driver);
             extentTestThread.get().addScreenCaptureFromPath(screenshotFilePath, testMethodName);
         } catch (IOException e) {
             e.printStackTrace();
